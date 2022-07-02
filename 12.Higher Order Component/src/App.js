@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-t
+tt
 const Button = ({ onClick, text, style }) => {
   return (
     <button onClick={onClick} style={style}>
