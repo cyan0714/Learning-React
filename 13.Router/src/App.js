@@ -1,27 +1,31 @@
 import React, { Component } from 'react'
 import {
   BrowserRouter,
+  Outlet,
   Routes,
   Route,
   NavLink,
+  Link,
   Switch,
   Redirect,
   Prompt,
-  withRouter,
+  withRouter
 } from 'react-router-dom'
-
-const Home = (props) => <h1>Welcome Home</h1>
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div className='App'>
-          <Routes>
-            <Route path='/home' element={<Home/>} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+      <div>
+        <h1>Bookkeeper</h1>
+        <nav
+          style={{
+            borderBottom: 'solid 1px',
+            paddingBottom: '1rem'
+          }}>
+          <Link to='/invoices'>Invoices</Link> | <Link to='/expenses'>Expenses</Link>
+        </nav>
+        <Outlet />
+      </div>
     )
   }
 }
