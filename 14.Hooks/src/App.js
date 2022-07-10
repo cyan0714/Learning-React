@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 
 // export default function App() {
 //   const [count, setCount] = useState(0)
@@ -12,6 +12,7 @@ import React, { Component, useState } from 'react'
 // }
 
 export default function Movies() {
+  const [titleCount, setTitleCount] = useState(0)
   const [movies, setMovies] = useState([
     {
       name: '复仇者联盟',
@@ -29,6 +30,22 @@ export default function Movies() {
       likeCount: 10000
     }
   ])
+
+  useEffect(() => {
+    console.log('只要 state 改变就会执行');
+    document.title = titleCount
+  })
+
+  useEffect(() => {
+    console.log('第二个参数的数组为空，所有 state 改变都不会执行，该回调只会执行一次（componentDidMount)');
+    document.title = titleCount
+  }, [])
+
+  useEffect(() => {
+    console.log('只有当 titleCount 改变才执行该回调');
+    document.title = titleCount
+  }, [titleCount])
+
   function incrementLikeCount(index) {
     const newMovies = [...movies]
     newMovies[index].likeCount += 1
@@ -50,6 +67,8 @@ export default function Movies() {
           )
         })}
       </ul>
+      <p>{titleCount}</p>
+      <button onClick={() => setTitleCount(titleCount + 1)}>titleCount + 1</button>
     </div>
   )
 }
