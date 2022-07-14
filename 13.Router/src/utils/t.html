@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // class Person {
+    //   constructor() {
+    //     this.name = 'csy'
+    //   }
+    // }
+    // class Student extends Person {
+    //   constructor() {
+    //     super()
+    //     console.log('this1',this);
+    //   }
+    // }
+
+    // let p = new Student();
+    // console.log(p);
+    // console.log( Person.prototype.name);
+    // console.log(p.__proto__ === Person.prototype.age);
+    // p.sayHello();
+    function Person() {
+      this.age = 19
+      this.go = () => {
+        console.log('this',this.age);
+      }
+    }
+    let p = new Person();
+    let n = p.go
+    n()
+    // Person.prototype.sayHello = function() {
+    //   console.log('hhh');
+    // }
+    // function Student() {
+    //   this.name = 'cyan'
+    // }
+    // Student.prototype = Person.prototype
+    // let s = new Student()
+    // s.sayHello();
+  </script>
+</body>
+</html>
