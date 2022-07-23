@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days Of React Challenge</title>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+      const span = React.createElement('span', {}, '这是 span')
+      const div = React.createElement('div', { 
+        className: 'cyan',
+        onClick: () => { alert('点我干嘛！') }
+      }, 'createElement 第一个参数是标签名(必须为小写)，第二个是属性对象，第三个为内容', span)
+      const reactRoot = ReactDOM.createRoot(document.querySelector('.root'))
+
+      reactRoot.render(div)
+    </script>
+  </body>
+</html>
